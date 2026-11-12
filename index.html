@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>Happy Birthday 🎈</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Procedural animation layer: seed, tree, heart leaves, falling petals -->
+  <canvas id="stage" aria-hidden="true"></canvas>
+
+  <main>
+    <!-- Phase 1: the pulsing heart (the canvas draws it, this button is its hit-area) -->
+    <section id="intro">
+      <button id="start" class="heart-btn" type="button" aria-label="Tap the heart to open your birthday surprise"></button>
+      <p id="hint"><span>tap the heart</span></p>
+    </section>
+
+    <!-- Phase 4: typewriter message (lines live in js/main.js) -->
+    <section id="message">
+      <div id="typed" aria-hidden="true"></div>
+      <p id="message-sr" class="sr-only" role="status"></p>
+    </section>
+  </main>
+
+  <div id="controls">
+    <button id="mute" type="button" hidden aria-label="Mute music" aria-pressed="false">♪</button>
+    <button id="replay" type="button" hidden>↻ Replay</button>
+  </div>
+
+  <!-- Optional: drop a track at assets/music.mp3. If it's missing the page simply stays silent. -->
+  <audio id="bgm" loop preload="none">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="js/typewriter.js"></script>
+  <script src="js/tree.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
